@@ -89,3 +89,12 @@ body {
     border-bottom: 0;
   }
 }
+
+/* parkattack overrides */
+.navbar-brand {
+  float: left;
+  padding: 10px 20px;
+}
+.navbar-brand > img {
+  display: inline;
+}
