@@ -18,16 +18,20 @@
   </p>
 </div>
 
-<div class="row">
-  <form>
+<div class="row" ng-show="user.uid">
+  <h4>Hi {{user.email}}!</h4>
+</div>
+
+<div class="row" ng-hide="user.uid">
+  <form ng-show="!user.uid">
     <div class="form-group col-md-4">
-      <input type="email" class="form-control" placeholder="email" required autofocus />
+      <input type="email" class="form-control" placeholder="email" ng-model="user.email" required autofocus />
     </div>
     <div class="form-group col-md-4">
-      <input type="password" class="form-control" placeholder="password" required />
+      <input type="password" class="form-control" placeholder="password" ng-model="user.password" required />
     </div>
     <div class="form-group col-md-4">
-      <input type="submit" class="btn btn-primary" value="sign up / login" />
+      <button class="btn btn-primary" ng-click="register()">sign up / login</button>
     </div>
   </form>
   <p>

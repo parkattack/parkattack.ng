@@ -8,10 +8,19 @@
  * Controller of the parkattackgithubioApp
  */
 angular.module('parkattackgithubioApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope) {
+    $scope.register = function () {
+      var ref = new Firebase("https://parkattack.firebaseio.com");
+      ref.createUser({
+        email: $scope.user.email,
+        password: $scope.user.password
+      }, function(error, userData) {
+        if (error) {
+          console.log("Error creating user:", error);
+        } else {
+          $scope.user.uid = userData.uid;
+          console.log("Successfully created user account with uid:", userData.uid);
+        }
+      });
+    };
   });
