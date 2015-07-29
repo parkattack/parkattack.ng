@@ -1,9 +1,19 @@
 sudo: false
 language: node_js
+before_install:
+- gem install sass compass
 node_js:
-  - 'iojs'
-  - '0.12'
-  - '0.10'
+- iojs
 before_script:
-  - 'npm install -g bower grunt-cli'
-  - 'bower install'
+- npm install -g bower grunt-cli
+- bower install
+script:
+- grunt build
+- bash ./publish.sh
+env:
+  global:
+  - GIT_NAME: Travis-CI
+  - GIT_EMAIL: travis.ci.build@gmail.com
+  - GH_REF: github.com/parkattack/parkattack.github.io.git
+  - GH_PAGES_BRANCH: master
+  - secure: PLrMKoSnmKwbIuBEz/CKYzAaQR549BCXtdeJpdfYraDMqj6/1cON41dcjeK58uIxtcmSifwsrb8G+yRYEmWZCSi0y68wd1XUfznPXRT6kAEmzJe/BFE3R2G0sErrmU02VnLBqeY4avsi6WgRlWOA2QGlUByaxOAmV/ffI1NehS0nQbwgFJtAHafPVG9m4XSj2A0h1SdiJ21EqDftC8fIvz5juFLTL8EAUt27lEN1bwYP8YLC8joNfaVTg3zpwyjPWRzZBsIhzjC7g1ebS/pDBL3RDInJcE2yrG1qgrbRhKtpEKD1ploGplY6Kp/SjYpFYcghRXw1pATHV79ah0i534PTscuatBQdZMabo+WOfOa7X8EW2Af40KC6rjMAHq6+XlJ+we/L6Qe0XTa9FbS1kEGTPbekHBnpm8z37fxn8rmp+T8YZ3ta9/M5taVJB+68kdfdR6BCWV6yzYKxCrfYoi/lMsV2PehprJPLSVC7+zgEMO51+XZqiQeLCLq+ebwkdHfJPULt83kdtXSNMC3pZndplcNgrMQktrQ9Qgf8pTH5gGVCvMbyDlb86unLyRC8Z9YSIwQp3eY5gc762GoYuA/2lUkklVIi8m6zHb6slu38/bfcP85UqkgfDpUX2B7feaMfmFhNAtI5MRuPYy+QESixTXhvzj8n+XjuNJKoSxE=
