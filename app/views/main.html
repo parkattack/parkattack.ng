@@ -8,33 +8,36 @@
 <div class="text-center" style="margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0;">
   <img src="images/hashtag-parkattack.png" alt="September 4th" style="margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0;" />
 </div>
-<div class="text-center" style="margin-top: 50px; margin-bottom: 0; padding-top: 0; padding-bottom: 0;">
-  <img src="images/sign-up.png" alt="are you game?" style="margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0;" />
+<div class="" style="margin-top: 50px; margin-bottom: 0; padding-top: 0; padding-bottom: 0; background-image: url('images/sign-up.png'); background-repeat: no-repeat; background-position: center;" ng-show="!user.uid">
+  <div class="container" style="padding-top: 300px; padding-bottom: 50px;">
+    <form ng-submit="go()">
+      <div class="form-group col-md-4">
+        <input type="email" class="form-control" placeholder="email" ng-model="user.email" required autofocus />
+      </div>
+      <div class="form-group col-md-4">
+        <input type="password" class="form-control" placeholder="password" ng-model="user.password" required />
+      </div>
+      <div class="col-md-2">
+        <input type="submit" class="form-control btn btn-primary" value="login" style="display: inline;"/>
+      </div>
+      <div class="col-md-2">
+        <input type="button" class="form-control btn btn-default" value="sign up" ng-click="register()" style="display: inline;" />
+      </div>
+    </form>
+  </div>
+</div>
+<div class="text-center" style="margin-top: 0; margin-bottom: 0; padding-top: 20px; padding-bottom: 0;" ng-show="!user.uid">
+  <div class="container">
+    <img src="images/hosted-by.png" alt="Hosted By" />
+  </div>
 </div>
 
-<div class="row" ng-show="user.$id">
+<div class="row" ng-show="false">
   <h4>
     <img ng-src="{{user.avatar}}" ng-show="user.avatar" class="img-rounded" style="width:30px; height: 30px;" />
     Hi {{user.name}}!
   </h4>
   <p><a href ng-click="logout()">logout</a></p>
-</div>
-
-<div class="row" ng-show="!user.$id">
-  <form ng-submit="go()">
-    <div class="form-group col-md-5">
-      <input type="email" class="form-control" placeholder="email" ng-model="user.email" required autofocus />
-    </div>
-    <div class="form-group col-md-5">
-      <input type="password" class="form-control" placeholder="password" ng-model="user.password" required />
-    </div>
-    <div class="form-group col-md-2">
-      <input type="submit" class="form-control btn btn-primary" value="login" />
-    </div>
-    <div class="form-group col-md-2 pull-right">
-      <input type="button" class="form-control btn btn-default" value="sign up" ng-click="register()" />
-    </div>
-  </form>
 </div>
 
 <div class="row" ng-show="debug">
