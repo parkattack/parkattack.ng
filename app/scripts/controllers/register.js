@@ -8,10 +8,8 @@
  * Controller of the parkattackgithubioApp
  */
 angular.module('parkattackgithubioApp')
-  .controller('RegisterCtrl', function ($scope, $location, $routeParams, Auth, User, ProperNounFormatter) {
-    if ($location.host() == 'localhost') {
-      $scope.debug = true;
-    }
+  .controller('RegisterCtrl', function ($scope, $rootScope, $location, $routeParams, Auth, User, ProperNounFormatter) {
+    $scope.debug = $rootScope.debug;
     if ($routeParams.email) {
       $scope.user = {
         email: $routeParams.email

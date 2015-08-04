@@ -8,14 +8,12 @@
  * Controller of the parkattackgithubioApp
  */
 angular.module('parkattackgithubioApp')
-  .controller('MainCtrl', function ($scope, $location, Auth, User) {
-    if ($location.host() == 'localhost'){
-      $scope.debug = true;
-    }
-    $scope.user = {};
+  .controller('MainCtrl', function ($scope, $rootScope, $location, Auth, User) {
+    $scope.debug = $rootScope.debug;
+    $scope.user = $rootScope.user;
     $scope.logout = function () {
       Auth.$unauth();
-      $scope.user = {};
+      $scope.user = $rootScope.user = {};
     };
     $scope.go = function () {
       Auth.$authWithPassword({
@@ -23,7 +21,7 @@ angular.module('parkattackgithubioApp')
         password: $scope.user.password
       }).then(function(authData) {
         if (authData && authData.uid) {
-          $scope.user = User.get(authData.uid);
+          $scope.user = $rootScope.user = User.get(authData.uid);
         }
       }).catch(function(error) {
         $scope.error = error;
@@ -33,11 +31,4 @@ angular.module('parkattackgithubioApp')
     $scope.register = function () {
       $location.path('/register/' + $scope.user.email);
     };
-    $scope.auth = Auth;
-    $scope.auth.$onAuth(function(authData) {
-      $scope.authData = authData;
-      if (authData && authData.uid) {
-        $scope.user = User.get(authData.uid);
-      }
-    });
   });

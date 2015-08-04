@@ -17,20 +17,4 @@ angular
     'ngSanitize',
     'ngTouch',
     'firebase'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/register/:email', {
-        templateUrl: 'views/register.html',
-        controller: 'RegisterCtrl',
-        controllerAs: 'register'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+  ]);

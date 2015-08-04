@@ -23,6 +23,19 @@ angular.module('parkattackgithubioApp')
   });
 
 angular.module('parkattackgithubioApp')
+  .factory('StepChallenge', function ($firebaseArray, Ref) {
+    return {
+      get: function(id) {
+        return $firebaseArray(Ref.child('StepChallenge').child(id));
+      },
+      add: function(id, item) {
+        Ref.child('StepChallenge').child(id).set(item);
+        return $firebaseArray(Ref.child('StepChallenge').child(id));
+      }
+    };
+  });
+
+angular.module('parkattackgithubioApp')
   .factory('Users', function ($firebaseArray, Ref) {
     return $firebaseArray(Ref.child('Users'));
   });
