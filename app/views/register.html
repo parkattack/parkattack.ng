@@ -1,0 +1,40 @@
+
+
+
+<div class="row marketing">
+  <h3>sign up for park attack</h3>
+  <p>We'll notify you by email of upcoming Park Attack events.</p>
+</div>
+
+<div class="row">
+  <form ng-submit="go()" class="clearfix">
+    <div class="form-group col-md-6">
+      <label for="name">name:</label>
+      <input type="text" class="form-control" placeholder="your name" ng-model="user.name" required autofocus />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="company">company:</label>
+      <input type="text" class="form-control" placeholder="company" ng-model="user.company" />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="email">email:</label>
+      <input type="email" class="form-control" placeholder="your email" ng-model="user.email" required />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="password">password:</label>
+      <input type="password" class="form-control" placeholder="your password" ng-model="user.password" required />
+    </div>
+    <div class="form-group col-md-6 pull-right">
+      <input type="submit" class="form-control btn btn-primary" value="log in" />
+    </div>
+  </form>
+  <p>
+    tip: if you sign up with your work email address, you'll see other people and Park Attack teams from your company.
+  </p>
+</div>
+
+<div class="row" ng-show="debug">
+  <pre>{{authData | json}}</pre>
+  <pre>{{user | json}}</pre>
+  <pre>{{error | json}}</pre>
+</div>

@@ -25,6 +25,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/register/:email', {
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl',
+        controllerAs: 'register'
+      })
       .otherwise({
         redirectTo: '/'
       });
