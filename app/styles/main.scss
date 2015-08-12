@@ -67,6 +67,12 @@ body {
   }
 }
 
+div.div-rounded {
+  -webkit-border-radius: 70px;
+     -moz-border-radius: 70px;
+          border-radius: 70px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {

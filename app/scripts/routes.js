@@ -8,11 +8,6 @@ angular.module('parkattackgithubioApp')
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/register/:email', {
-        templateUrl: 'views/register.html',
-        controller: 'RegisterCtrl',
-        controllerAs: 'register'
-      })
       .when('/steps', {
         templateUrl: 'views/steps.html',
         controller: 'StepsCtrl',
