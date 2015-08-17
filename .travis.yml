@@ -20,4 +20,5 @@ env:
   - GIT_EMAIL: travis.ci.build@gmail.com
   - GH_REF: github.com/parkattack/parkattack.github.io.git
   - GH_PAGES_BRANCH: master
+  - GH_PAGES_CNAME: parkattack.co.uk
   - secure: Yv3XIHEELrv9Oo0tUdRdjiLjbjjWN+nIQtusAswLj7V5C6JOneNfyV2HEMFeM9pakIagjgyJ8WWraYAeV1ci7INvB3LA5j9ooeTlfqMO6Yq4n3/fx0yrqQCYsxHNsEsfXS5Juq48psj3cYsj4szjzwX5wC7awzQarGrnH9jXSU8kIbyYts+570btxMxV+iQlqRJFL0JFKjQg9XjzKMGPdZIKdS0n05GgkLWeHuP1tNUN64o70SezR6cav/fOc0MQzircINuPORmtfCywne1kfqHPbRoX3sdCacH0HrN+3UyweWsJ8h7xYlNLY/AimJrufj+XT782tpbXxQgOZ9pO3nWHQYDeFcbCX8u4dhTolLpulNU4G0Kiqny3MfjFE8ANJsA/Um3Ern++SU5kOKi6Qn6WZetLhRfggGW4oT5uT5eLuqprdd+YZF/PwlqF1YOSZb8ugXe7wN6W/3uh4Y3GH+ahmWl+lF5dUXjWvShJUmYiRo0jZL77x0QP8OFe+JiC8OevELheBEgiZ5LAr1BbVHydglSCsZiaJ/mJaETQYMx8eInBF85CQOcUBodzVgVNhrQS+NpfPQIkZQikLgDmFxtaRz4LVRp/+u7/DSTp7qDtJpqkwd98YGg2cWBw+J9GaZ9Kbyx8n13QUF+tXUPnNgMkABpbxtEqORPZUpQxPFA=
