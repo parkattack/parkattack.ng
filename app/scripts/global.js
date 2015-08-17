@@ -12,7 +12,7 @@ function shuffle(array) {
   }
   return array;
 }
-
+    
 angular.module('parkAttackWebApp')
   .run(function ($rootScope, $location, Auth, User) {
     $rootScope.auth = Auth;
@@ -22,5 +22,5 @@ angular.module('parkAttackWebApp')
         $rootScope.user = User.get(authData.uid);
       }
     });
-    $rootScope.debug = false;//($location.host() === 'localhost');
+    $rootScope.debug = ($location.host() === 'localhost');
   });
