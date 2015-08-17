@@ -9,7 +9,11 @@ before_script:
 - bower install
 script:
 - grunt build
-- bash ./publish.sh
+deploy:
+  provider: script
+  script: ./publish.sh
+  on:
+    branch: master
 env:
   global:
   - GIT_NAME: Travis-CI
