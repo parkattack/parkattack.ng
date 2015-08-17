@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name parkattackgithubioApp
+ * @name parkAttackWebApp
  * @description
- * # parkattackgithubioApp
+ * # parkAttackWebApp
  *
  * Main module of the application.
  */
 angular
-  .module('parkattackgithubioApp', [
+  .module('parkAttackWebApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

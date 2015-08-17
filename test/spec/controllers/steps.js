@@ -3,7 +3,7 @@
 describe('Controller: StepsCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('parkattackgithubioApp'));
+  beforeEach(module('parkAttackWebApp'));
 
   var StepsCtrl,
     scope;

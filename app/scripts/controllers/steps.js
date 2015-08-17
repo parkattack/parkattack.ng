@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name parkattackgithubioApp.controller:StepsCtrl
+ * @name parkAttackWebApp.controller:StepsCtrl
  * @description
  * # StepsCtrl
- * Controller of the parkattackgithubioApp
+ * Controller of the parkAttackWebApp
  */
-angular.module('parkattackgithubioApp')
+angular.module('parkAttackWebApp')
   .controller('StepsCtrl', function ($scope, $rootScope, StepChallenge, $firebaseArray, Ref) {
     $scope.debug = $rootScope.debug;
     $scope.user = $rootScope.user;
