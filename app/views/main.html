@@ -14,7 +14,7 @@
 </div>
   <div class="container" style="padding-top: 50px;">
 
-    <div ng-show="user.avatar">
+    <div ng-show="user.$id">
       <h4>
         <img ng-src="{{user.avatar}}" ng-show="user.avatar" class="img-rounded" style="width:30px; height: 30px;" />
         Hi {{user.name}}!
@@ -22,7 +22,7 @@
       <p><a href ng-click="logout()">logout</a></p>
     </div>
 
-    <div ng-show="!user.avatar">
+    <div ng-show="!user.$id">
       <form ng-submit="go(showRegistration)" ng-show="!user.avatar">
         <div class="row" ng-hide="!showRegistration">
           <div class="form-group col-md-4">

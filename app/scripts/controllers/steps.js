@@ -9,9 +9,6 @@
  */
 angular.module('parkAttackWebApp')
   .controller('StepsCtrl', function ($scope, $rootScope, StepChallenge, $firebaseArray, Ref) {
-    $scope.debug = $rootScope.debug;
-    $scope.user = $rootScope.user;
-
     $scope.go = function() {
       StepChallenge.add('test', [{
         user: $rootScope.authData.uid,

@@ -9,5 +9,5 @@ angular.module('parkAttackWebApp')
         $rootScope.user = User.get(authData.uid);
       }
     });
-    $rootScope.debug = false;//($location.host() === 'localhost');
+    $rootScope.debug = ($location.host() === 'localhost');
   });
