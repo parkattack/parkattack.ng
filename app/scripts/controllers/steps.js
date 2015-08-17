@@ -9,9 +9,6 @@
  */
 angular.module('parkAttackWebApp')
   .controller('StepsCtrl', function ($scope, $rootScope, StepChallenge, $firebaseArray, Ref) {
-    $scope.debug = $rootScope.debug;
-    $scope.user = $rootScope.user;
-
     $scope.go = function() {
       StepChallenge.add('test', [{
         user: $rootScope.authData.uid,
@@ -26,6 +23,37 @@ angular.module('parkAttackWebApp')
     var query = stepsRef.orderByChild("timestamp").limitToLast(25);
     $scope.filteredSteps = $firebaseArray(query);
 
+    $scope.prizes = shuffle([
+      {
+        name: "Fame"
+      },
+      {
+        name: "Glory"
+      },
+      {
+        name: "Adulation"
+      }
+    ]);
 
-
+    $scope.attending = [
+      {
+        name: "Ryan",
+        email: "ryanbuckle@capesuk.com"
+      }, {
+        name: "Alice",
+        email: "alice@capesuk.com"
+      }, {
+        name: "Lee",
+        email: "lee@purplemotion.co.uk"
+      }, {
+        name: "Paul",
+        email: "ceo@plymouthdrakefoundation.co.uk"
+      }, {
+        name: "Alex",
+        email: "acresswell@stackoverflow.com"
+      }, {
+        name: "Rob",
+        email: "rthijssen@gmail.com"
+      }
+    ];
   });

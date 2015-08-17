@@ -1,17 +1,47 @@
-
 <div class="row" ng-show="user.$id">
-  <img src="images/walking.jpg" alt="https://www.flickr.com/photos/lancesh/190382917" class="img-rounded" />
-  <form ng-submit="go()">
-    <div class="form-group col-md-4">
-      <input type="date" class="form-control" ng-model="newSteps.date" required />
-    </div>
-    <div class="form-group col-md-4">
-      <input type="number" class="form-control" ng-model="newSteps.steps" required />
-    </div>
-    <div class="form-group col-md-4">
-      <input type="submit" class="form-control btn btn-primary" value="go" />
-    </div>
-  </form>
+  <p class="text-center">
+    <img src="images/parkattack500x425.png" alt="let's play" style="width: 500px;" />
+    <img src="images/ready-to-play.png" alt="are you ready to play" style="width: 100%; max-width: 923px;" />
+  </p>
+  <div class="col-md-6 text-center">
+    <img src="images/launchpad-faces.jpg" alt="https://www.flickr.com/photos/lancesh/190382917" class="img-rounded" style="width: 90%;box-shadow: 10px 10px 5px grey;" />
+  </div>
+  <div class="col-md-6">
+    <h3>Escape the confines of your office, liberate your desk and get ready...</h3>
+    <p>Come to Park Attack on the first Friday of every month, in Phase 2 for an hour of fun and games, friendly competitions and prizes.</p>
+    <p>This is the exciting, energetic new way to network with others on the park and refresh your mind.</p>
+    <p>Are you game? Entry costs £1.</p>
+    <h3>Make an impact!</h3>
+    <p>All money raised goes to charity and will be distributed by the <a href="http://www.drakefoundation.co.uk/pages/grants/73">Drake Impact Fund</a> to projects that combat child poverty in Plymouth.</p>
+    <h3>Lets play!</h3>
+  </div>
+</div>
+<div class="row" ng-show="user.$id">
+  <div class="col-md-6 text-center">
+    <h2>Prizes</h2>
+    <ul class="list-unstyled">
+      <li ng-repeat="prize in prizes">
+        {{prize.name}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6 text-center">
+    <h2>Who's attending?</h2>
+    <ul class="list-inline">
+      <li ng-repeat="attendee in attending | orderBy:'name'" style="padding: .5em;">
+        <div class="img-rounded" style="background-color: #f0f0f0; padding: .5em;">
+          <img gravatar-src-once="attendee.email" gravatar-size="30" />
+          <span style="margin-left:.5em;">{{attendee.name}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="text-center" style="margin-top: 0; margin-bottom: 0; padding-top: 20px; padding-bottom: 0;" ng-show="!user.uid">
+  <div class="container">
+    <img src="images/hosted-by.png" alt="Hosted By" />
+  </div>
 </div>
 
 <div class="row" ng-show="debug">

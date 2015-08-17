@@ -8,13 +8,10 @@
  * Controller of the parkAttackWebApp
  */
 angular.module('parkAttackWebApp')
-  .controller('MainCtrl', function ($scope, $rootScope, $location, $routeParams, Auth, User) {
-    $scope.debug = $rootScope.debug;
-    $scope.user = $rootScope.user;
+  .controller('MainCtrl', function ($scope, $location, $routeParams, Auth, User) {
     $scope.showRegistration = false;
     $scope.logout = function () {
       Auth.$unauth();
-      $scope.user = $rootScope.user = {};
     };
     $scope.go = function (registerFirst) {
       if (registerFirst) {
@@ -45,9 +42,6 @@ angular.module('parkAttackWebApp')
           email: $scope.user.email,
           password: $scope.user.password
         }).then(function(authData) {
-          if (authData && authData.uid) {
-            $scope.user = $rootScope.user = User.get(authData.uid);
-          }
           $location.path('/steps');
         }).catch(function(error) {
           $scope.error = error;
