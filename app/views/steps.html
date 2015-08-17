@@ -29,9 +29,14 @@
     <h2>Who's attending?</h2>
     <ul class="list-inline">
       <li ng-repeat="attendee in attending | orderBy:'name'" style="padding: .5em;">
-        <div class="img-rounded" style="background-color: #f0f0f0; padding: .5em;">
-          <img gravatar-src-once="attendee.email" gravatar-size="30" class="img-rounded" />
-          <span style="margin-left:.5em;">{{attendee.name}}</span>
+        <div class="img-rounded text-left" style="background-color: #f0f0f0; padding: .5em;">
+          <img gravatar-src-once="attendee.email" gravatar-size="40" class="img-rounded" style="float: left;" />
+          <div style="margin-left:.5em; float: left;">
+            {{attendee.name}}
+            <span ng-show="attendee.company"><br />
+            <a href="http://{{attendee.email.split('@')[1]}}">{{attendee.company}}</a></span>
+          </div>
+          <div class="clearfix"></div>
         </div>
       </li>
     </ul>
