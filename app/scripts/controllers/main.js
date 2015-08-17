@@ -10,9 +10,6 @@
 angular.module('parkAttackWebApp')
   .controller('MainCtrl', function ($scope, $location, $routeParams, Auth, User) {
     $scope.showRegistration = false;
-    $scope.logout = function () {
-      Auth.$unauth();
-    };
     $scope.go = function (registerFirst) {
       if (registerFirst) {
         Auth.$createUser({

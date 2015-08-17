@@ -23,4 +23,8 @@ angular.module('parkAttackWebApp')
       }
     });
     $rootScope.debug = ($location.host() === 'localhost');
+    $rootScope.logout = function () {
+      Auth.$unauth();
+      $rootScope.user = undefined;
+    };
   });

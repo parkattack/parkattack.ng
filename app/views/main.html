@@ -8,49 +8,45 @@
 <div class="text-center" style="margin-top: 0; margin-bottom: 30px; padding-top: 0; padding-bottom: 0;">
   <img src="images/hashtag-parkattack.png" alt="September 4th" style="width: 100%; max-width: 988px;" />
 </div>
-<div class="div-rounded" style="background-color: #e3026c; padding-top: 50px; padding-bottom: 50px;" ng-show="!user.uid">
-<div class="text-center">
-  <img src="images/sign-up.png" style="width: 100%; max-width: 988px;" />
-</div>
+<div class="div-rounded" style="background-color: #e3026c; padding-top: 50px; padding-bottom: 50px;" ng-show="!user.$id">
+  <div class="text-center">
+    <img src="images/sign-up.png" style="width: 100%; max-width: 988px;" />
+  </div>
   <div class="container" style="padding-top: 50px;">
-
-    <div ng-show="user.$id">
-      <h4>
-        <img ng-src="{{user.avatar}}" ng-show="user.avatar" class="img-rounded" style="width:30px; height: 30px;" />
-        Hi {{user.name}}!
-      </h4>
-      <p><a href ng-click="logout()">logout</a></p>
-    </div>
-
-    <div ng-show="!user.$id">
-      <form ng-submit="go(showRegistration)" ng-show="!user.avatar">
-        <div class="row" ng-hide="!showRegistration">
-          <div class="form-group col-md-4">
-            <input type="text" class="form-control" placeholder="your name" ng-model="user.name" />
-          </div>
-          <div class="form-group col-md-4">
-            <input type="text" class="form-control" placeholder="company" ng-model="user.company" />
-          </div>
+    <form ng-submit="go(showRegistration)" ng-show="!user.avatar">
+      <div class="row" ng-hide="!showRegistration">
+        <div class="form-group col-md-4">
+          <input type="text" class="form-control" placeholder="your name" ng-model="user.name" />
         </div>
-        <div class="row">
-          <div class="form-group col-md-4">
-            <input type="email" class="form-control" placeholder="email" ng-model="user.email" required />
-          </div>
-          <div class="form-group col-md-4">
-            <input type="password" class="form-control" placeholder="password" ng-model="user.password" required />
-          </div>
-          <div class="col-md-2">
-            <input type="submit" class="form-control btn btn-primary" value="login" style="display: inline;"/>
-          </div>
-          <div class="col-md-2">
-            <input type="button" class="form-control btn btn-default" value="sign up" ng-click="showRegistration=true" style="display: inline;" ng-hide="showRegistration" />
-          </div>
+        <div class="form-group col-md-4">
+          <input type="text" class="form-control" placeholder="company" ng-model="user.company" />
         </div>
-    </div>
-
+      </div>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <input type="email" class="form-control" placeholder="email" ng-model="user.email" required />
+        </div>
+        <div class="form-group col-md-4">
+          <input type="password" class="form-control" placeholder="password" ng-model="user.password" required />
+        </div>
+        <div class="col-md-2">
+          <input type="submit" class="form-control btn btn-primary" value="login" style="display: inline;"/>
+        </div>
+        <div class="col-md-2">
+          <input type="button" class="form-control btn btn-default" value="sign up" ng-click="showRegistration=true" style="display: inline;" ng-hide="showRegistration" />
+        </div>
+      </div>
     </form>
   </div>
 </div>
+<div class="container" style="padding-top: 50px;" ng-show="user.$id">
+  <h4>
+    <img ng-src="{{user.avatar}}" ng-show="user.avatar" class="img-rounded" style="width:30px; height: 30px;" />
+    Hi {{user.name}}, you're signed up and on <a ng-href="#/steps">the list</a>!
+  </h4>
+  <p><a href ng-click="logout()">logout</a></p>
+</div>
+
 <div class="text-center" style="margin-top: 0; margin-bottom: 0; padding-top: 20px; padding-bottom: 0;" ng-show="!user.uid">
   <div class="container">
     <img src="images/hosted-by.png" alt="Hosted By" />
