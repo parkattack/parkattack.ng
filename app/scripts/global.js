@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('parkattackgithubioApp')
+angular.module('parkAttackWebApp')
   .run(function ($rootScope, $location, Auth, User) {
     $rootScope.auth = Auth;
     $rootScope.auth.$onAuth(function(authData) {

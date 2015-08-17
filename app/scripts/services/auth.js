@@ -2,27 +2,27 @@
 
 /**
  * @ngdoc service
- * @name parkattackgithubioApp.Auth
+ * @name parkAttackWebApp.Auth
  * @description
  * # Auth
- * Factory in the parkattackgithubioApp.
+ * Factory in the parkAttackWebApp.
  */
 
 // http://stackoverflow.com/a/30669858/68115
-angular.module('parkattackgithubioApp')
+angular.module('parkAttackWebApp')
   .constant('FIREBASE_URL', 'https://parkattack.firebaseio.com/');
 
-angular.module('parkattackgithubioApp')
+angular.module('parkAttackWebApp')
   .factory('Ref', function (FIREBASE_URL) {
     return new Firebase(FIREBASE_URL);
   });
 
-angular.module('parkattackgithubioApp')
+angular.module('parkAttackWebApp')
   .factory('Auth', function ($firebaseAuth, $rootScope, Ref) {
     return $firebaseAuth(Ref);
   });
 
-angular.module('parkattackgithubioApp')
+angular.module('parkAttackWebApp')
   .factory('StepChallenge', function ($firebaseArray, Ref) {
     return {
       get: function(id) {
@@ -35,12 +35,12 @@ angular.module('parkattackgithubioApp')
     };
   });
 
-angular.module('parkattackgithubioApp')
+angular.module('parkAttackWebApp')
   .factory('Users', function ($firebaseArray, Ref) {
     return $firebaseArray(Ref.child('Users'));
   });
 
-angular.module('parkattackgithubioApp')
+angular.module('parkAttackWebApp')
   .factory('User', function ($firebaseObject, Ref) {
     return {
       get: function(id) {

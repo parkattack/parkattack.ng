@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name parkattackgithubioApp.ProperNounFormatter
+ * @name parkAttackWebApp.ProperNounFormatter
  * @description
  * # ProperNounFormatter
- * Service in the parkattackgithubioApp.
+ * Service in the parkAttackWebApp.
  */
-angular.module('parkattackgithubioApp')
+angular.module('parkAttackWebApp')
   .service('ProperNounFormatter', function () {
     return {
       spacify: function(text, useSingleLetterSmarts) {

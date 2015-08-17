@@ -3,7 +3,7 @@
 describe('Service: ProperNounFormatter', function () {
 
   // load the service's module
-  beforeEach(module('parkattackgithubioApp'));
+  beforeEach(module('parkAttackWebApp'));
 
   // instantiate service
   var ProperNounFormatter;

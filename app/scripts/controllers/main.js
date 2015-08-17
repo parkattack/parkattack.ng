@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name parkattackgithubioApp.controller:MainCtrl
+ * @name parkAttackWebApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the parkattackgithubioApp
+ * Controller of the parkAttackWebApp
  */
-angular.module('parkattackgithubioApp')
+angular.module('parkAttackWebApp')
   .controller('MainCtrl', function ($scope, $rootScope, $location, $routeParams, Auth, User) {
     $scope.debug = $rootScope.debug;
     $scope.user = $rootScope.user;

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('parkattackgithubioApp')
+angular.module('parkAttackWebApp')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
