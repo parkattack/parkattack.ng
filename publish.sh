@@ -2,7 +2,6 @@
 
 git clone "https://${GH_TOKEN}@${GH_REF}" $TRAVIS_BUILD_DIR/pages_repo
 rm -rf $TRAVIS_BUILD_DIR/pages_repo/*
-ls -al $TRAVIS_BUILD_DIR
 cp -r $TRAVIS_BUILD_DIR/dist/* $TRAVIS_BUILD_DIR/pages_repo/
 if [[ -n "$GH_PAGES_CNAME" ]]; then
   echo $GH_PAGES_CNAME> $TRAVIS_BUILD_DIR/pages_repo/CNAME

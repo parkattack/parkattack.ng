@@ -10,10 +10,12 @@ before_script:
 script:
 - grunt build
 deploy:
+  skip_cleanup: true
   provider: script
   script: ./publish.sh
   on:
     branch: master
+    condition: "$TRAVIS_PULL_REQUEST = false"
 env:
   global:
   - GIT_NAME: Travis-CI
