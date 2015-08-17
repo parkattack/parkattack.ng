@@ -30,11 +30,12 @@
     <ul class="list-inline">
       <li ng-repeat="attendee in attending | orderBy:'name'" style="padding: .5em;">
         <div class="img-rounded" style="background-color: #f0f0f0; padding: .5em;">
-          <img gravatar-src-once="attendee.email" gravatar-size="30" />
+          <img gravatar-src-once="attendee.email" gravatar-size="30" class="img-rounded" />
           <span style="margin-left:.5em;">{{attendee.name}}</span>
         </div>
       </li>
     </ul>
+    <p class="small text-muted"><em>Profile images above are managed by gravatar and associated with the email address used to sign up.</em><br />Set yours at: <a href="http://en.gravatar.com/">gravatar.com</a>.</p>
   </div>
 </div>
 
@@ -47,5 +48,6 @@
 <div class="row" ng-show="debug">
   <pre>{{authData | json}}</pre>
   <pre>{{user | json}}</pre>
+  <pre>{{attending | json}}</pre>
   <pre>{{error | json}}</pre>
 </div>
